@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{34FF4CBB-C117-48C6-9692-98C7E79908CF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="prjMedia.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Aula1\prjCalc.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="prjMedia">
+        <MSBuild Projects="prjMedia.dproj"/>
+    </Target>
+    <Target Name="prjMedia:Clean">
+        <MSBuild Projects="prjMedia.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjMedia:Make">
+        <MSBuild Projects="prjMedia.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjCalc">
+        <MSBuild Projects="..\Aula1\prjCalc.dproj"/>
+    </Target>
+    <Target Name="prjCalc:Clean">
+        <MSBuild Projects="..\Aula1\prjCalc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjCalc:Make">
+        <MSBuild Projects="..\Aula1\prjCalc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="prjMedia;prjCalc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="prjMedia:Clean;prjCalc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="prjMedia:Make;prjCalc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

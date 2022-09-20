@@ -1,0 +1,83 @@
+unit unitMes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmMes = class(TForm)
+    edtMes: TEdit;
+    edtExtenso: TEdit;
+    Label2: TLabel;
+    Label1: TLabel;
+    btnLimpar: TButton;
+    btnExibir: TButton;
+    btnFechar: TButton;
+    procedure btnFecharClick(Sender: TObject);
+    procedure btnLimparClick(Sender: TObject);
+    procedure btnExibirClick(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMes: TfrmMes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmMes.btnExibirClick(Sender: TObject);
+var mes : integer;
+    jan, feb, mar, apr, may, jun, jul, agu, sep, oct, nov, dec : string;
+begin
+  mes := StrToInt(edtMes.Text);
+
+  jan := 'Janeiro';
+  feb:= 'Fevereiro';
+  mar := 'Março';
+  apr := 'Abril';
+  may := 'Maio';
+  jun := 'Junho';
+  jul := 'Julho';
+  agu := 'Agosto';
+  sep := 'Setembro';
+  oct := 'Outubro';
+  nov := 'Novembro';
+  dec := 'Dezembro';
+
+  if mes = 1 then
+  edtExtenso.Text := (jan);
+
+   if mes = 2 then
+  ShowMessage(feb);
+
+
+
+
+
+
+end;
+
+procedure TfrmMes.btnFecharClick(Sender: TObject);
+begin
+    if Application.MessageBox('Deseja fechar?', 'Confirme',
+    MB_YESNO + MB_ICONQUESTION + MB_DEFBUTTON2) = idyes then close;
+
+end;
+
+procedure TfrmMes.btnLimparClick(Sender: TObject);
+begin
+    edtMes.Clear;
+    edtExtenso.Clear;
+    edtMes.SetFocus;
+end;
+
+
+
+end.

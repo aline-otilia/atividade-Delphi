@@ -1,0 +1,14 @@
+program prjMes;
+
+uses
+  Vcl.Forms,
+  unitMes in 'unitMes.pas' {frmMes};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMes, frmMes);
+  Application.Run;
+end.

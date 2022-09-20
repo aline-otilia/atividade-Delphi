@@ -1,0 +1,101 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'M'#233'dia '
+  ClientHeight = 201
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 136
+    Top = 13
+    Width = 84
+    Height = 13
+    Caption = 'Digitar 10 Valores'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 77
+    Width = 28
+    Height = 13
+    Caption = 'M'#233'dia'
+  end
+  object Label3: TLabel
+    Left = 168
+    Top = 77
+    Width = 66
+    Height = 13
+    Caption = 'Maior N'#250'mero'
+  end
+  object Label4: TLabel
+    Left = 318
+    Top = 77
+    Width = 70
+    Height = 13
+    Caption = 'Menor N'#250'mero'
+  end
+  object edtValores: TEdit
+    Left = 136
+    Top = 32
+    Width = 121
+    Height = 21
+    TabOrder = 0
+  end
+  object edtMedia: TEdit
+    Left = 24
+    Top = 96
+    Width = 121
+    Height = 21
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object edtMaior: TEdit
+    Left = 168
+    Top = 96
+    Width = 121
+    Height = 21
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object edtMenor: TEdit
+    Left = 318
+    Top = 96
+    Width = 121
+    Height = 21
+    ReadOnly = True
+    TabOrder = 3
+  end
+  object btnLimpar: TButton
+    Left = 24
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = 'Limpar'
+    TabOrder = 4
+    OnClick = btnLimparClick
+  end
+  object btnCalcular: TButton
+    Left = 168
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = 'Calcular'
+    TabOrder = 5
+  end
+  object btnFechar: TButton
+    Left = 318
+    Top = 144
+    Width = 75
+    Height = 25
+    Caption = 'Fechar'
+    TabOrder = 6
+    OnClick = btnFecharClick
+  end
+end
